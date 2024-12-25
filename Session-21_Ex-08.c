@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 struct Student {
     int id;
     char name[50];
@@ -8,14 +7,13 @@ struct Student {
 };
 
 int main() {
-    struct Student students[100]; 
-    int count = 0;
-    FILE *file;                   
+    struct Student students[100];
+    int count;
+    FILE *file;
     file = fopen("students.txt", "r");
-    for (count = 0; count < 100; count++) {
-        if (fscanf(file, "%d, %s, %d\n", &students[count].id, students[count].name, &students[count].age) != 3) {
-            break;
-        }
+    fscanf(file, "%d", &count);
+    for (int i = 0; i < count; i++) {
+        fscanf(file, "%d %s %d", &students[i].id, students[i].name, &students[i].age);
     }
     fclose(file);
     printf("Danh sách sinh viên đọc từ file:\n");
