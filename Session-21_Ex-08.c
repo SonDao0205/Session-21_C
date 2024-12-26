@@ -16,9 +16,9 @@ int main() {
         fscanf(file, "%d %s %d", &students[i].id, students[i].name, &students[i].age);
     }
     fclose(file);
-    printf("Danh sách sinh viên đọc từ file:\n");
+    printf("Danh sach sinh vien tu file:\n");
     for (int i = 0; i < count; i++) {
-        printf("ID: %d, Tên: %s, Tuổi: %d\n", students[i].id, students[i].name, students[i].age);
+        printf("ID: %d, Ten: %s, Tuoi: %d\n", students[i].id, students[i].name, students[i].age);
     }
     return 0;
 }
