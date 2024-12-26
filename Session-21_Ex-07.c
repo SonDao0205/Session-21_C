@@ -10,19 +10,19 @@ struct Student {
 int main() {
     int n; 
     FILE *file;
-    printf("Nhập số lượng sinh viên: ");
+    printf("Nhap so luong sinh vien: ");
     scanf("%d", &n);
     
     struct Student *students = (struct Student *)malloc(n * sizeof(struct Student));
     for (int i = 0; i < n; i++) {
-        printf("\nNhập thông tin cho sinh viên thứ %d:\n", i + 1);
+        printf("\nNhap thong tin sinh vien thu %d:\n", i + 1);
         printf("ID: ");
         scanf("%d",&students[i].id);
-        printf("Tên: ");
+        printf("Ten: ");
         getchar();
         fgets(students[i].name, 50, stdin);
         students[i].name[strcspn(students[i].name, "\n")] = '\0';
-        printf("Tuổi: ");
+        printf("Tuoi: ");
         scanf("%d", &students[i].age);
     }
     file = fopen("students.txt", "w");
